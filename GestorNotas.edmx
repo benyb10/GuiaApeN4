@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="RegistroNotasModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Notas">
+          <Key>
+            <PropertyRef Name="Cedula" />
+          </Key>
+          <Property Name="Cedula" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="PrimerNombre" Type="varchar" MaxLength="50" />
+          <Property Name="SegundoNombre" Type="varchar" MaxLength="50" />
+          <Property Name="PrimerApellido" Type="varchar" MaxLength="50" />
+          <Property Name="SegundoApellido" Type="varchar" MaxLength="50" />
+          <Property Name="Nota1" Type="decimal" Precision="5" Scale="2" />
+          <Property Name="Nota2" Type="decimal" Precision="5" Scale="2" />
+          <Property Name="Supletorio" Type="decimal" Precision="5" Scale="2" />
+          <Property Name="Estado" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <EntityContainer Name="RegistroNotasModelStoreContainer">
+          <EntitySet Name="Notas" EntityType="Self.Notas" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="RegistroNotasModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Notas">
+          <Key>
+            <PropertyRef Name="Cedula" />
+          </Key>
+          <Property Name="Cedula" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PrimerNombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SegundoNombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PrimerApellido" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SegundoApellido" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Nota1" Type="Decimal" Precision="5" Scale="2" />
+          <Property Name="Nota2" Type="Decimal" Precision="5" Scale="2" />
+          <Property Name="Supletorio" Type="Decimal" Precision="5" Scale="2" />
+          <Property Name="Estado" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="RegistroNotasEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Notas" EntityType="Self.Notas" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="RegistroNotasModelStoreContainer" CdmEntityContainer="RegistroNotasEntities">
+          <EntitySetMapping Name="Notas">
+            <EntityTypeMapping TypeName="RegistroNotasModel.Notas">
+              <MappingFragment StoreEntitySet="Notas">
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+                <ScalarProperty Name="Cedula" ColumnName="Cedula" />
+                <ScalarProperty Name="PrimerNombre" ColumnName="PrimerNombre" />
+                <ScalarProperty Name="SegundoNombre" ColumnName="SegundoNombre" />
+                <ScalarProperty Name="PrimerApellido" ColumnName="PrimerApellido" />
+                <ScalarProperty Name="SegundoApellido" ColumnName="SegundoApellido" />
+                <ScalarProperty Name="Nota1" ColumnName="Nota1" />
+                <ScalarProperty Name="Nota2" ColumnName="Nota2" />
+                <ScalarProperty Name="Supletorio" ColumnName="Supletorio" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
